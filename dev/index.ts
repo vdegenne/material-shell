@@ -1,18 +1,24 @@
-import {LitElement, html} from 'lit';
-import {customElement} from 'lit/decorators.js';
-import {materialShellLoadingOff} from '../lib/index.js';
+import { render, html } from 'lit-html';
+import { customElement } from 'lit/decorators.js';
+import { materialShellLoadingOff } from '../lib/index.js';
 
 @customElement('e-l')
-class E extends LitElement {
-	render() {
-		return html`hihi`;
-	}
+class E extends HTMLElement {
+  render() {
+    return html`hihi`;
+  }
 
-	firstUpdated() {
-		setTimeout(() => {
-			materialShellLoadingOff.call(this);
-			// OR
-			// document.querySelector('material-shell')!.loading = false;
-		}, 2000);
-	}
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    setTimeout(() => {
+      render(this.render(), this.shadowRoot);
+      materialShellLoadingOff.call(this);
+      // OR
+      // document.querySelector('material-shell')!.loading = false;
+    }, 2000);
+  }
 }
