@@ -15,7 +15,7 @@
 		"./material-shell/*": "./lib/material-shell/*"
 	},
 	"scripts": {
-		"dev": "wds --watch --open=dev/",
+		"dev": "wds",
 		"build": "wireit"
 	},
 	"wireit": {

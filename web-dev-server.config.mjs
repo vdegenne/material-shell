@@ -4,7 +4,8 @@ import {fileURLToPath} from 'url';
 /** @type {import('@web/dev-server').DevServerConfig} */
 export default {
 	nodeResolve: true,
-	open: 'test.html',
+	watch: true,
+	open: 'dev/',
 	plugins: [
 		esbuildPlugin({
 			ts: true,
