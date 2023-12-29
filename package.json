@@ -1,0 +1,92 @@
+{
+	"name": "material-shell",
+	"type": "module",
+	"description": "Shell element for material app.",
+	"version": "1.0.1",
+	"main": "./material-shell.js",
+	"types": "./lib/index.d.ts",
+	"module": "./lib/index.js",
+	"exports": {
+		".": {
+			"import": "./lib/index.js",
+			"default": "./lib/index.js",
+			"types": "./lib/index.d.ts"
+		},
+		"./material-shell/*": "./lib/material-shell/*"
+	},
+	"scripts": {
+		"dev": "wds --watch --open=dev/",
+		"build": "wireit"
+	},
+	"wireit": {
+		"build": {
+			"dependencies": [
+				"build:ts",
+				"build:rollup"
+			]
+		},
+		"build:ts": {
+			"command": "tsc --pretty",
+			"clean": "if-file-deleted",
+			"files": [
+				"tsconfig.js",
+				"src"
+			],
+			"output": [
+				"lib"
+			]
+		},
+		"build:copy-css-files": {
+			"command": "cp src/material-shell/*.css lib/material-shell/",
+			"dependencies": [
+				"build:ts"
+			],
+			"files": [
+				"src/material-shell/*.css"
+			],
+			"output": [
+				"lib/material-shell/*.css"
+			]
+		},
+		"build:rollup": {
+			"command": "rollup -c",
+			"files": [
+				"rollup.config.js"
+			],
+			"dependencies": [
+				"build:copy-css-files",
+				"build:ts"
+			],
+			"output": [
+				"./material-shell.js"
+			]
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vdegenne/material-shell.git"
+	},
+	"author": "Valentin Degenne",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vdegenne/material-shell/issues"
+	},
+	"homepage": "https://github.com/vdegenne/material-shell#readme",
+	"devDependencies": {
+		"@material/web": "^1.1.1",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@web/dev-server": "^0.4.1",
+		"@web/dev-server-esbuild": "^1.0.1",
+		"lit": "^3.1.0",
+		"rollup": "^4.9.1",
+		"rollup-plugin-css-modules": "^0.1.2",
+		"rollup-plugin-minify-template-literals": "^1.1.4",
+		"typescript": "^5.3.3",
+		"wireit": "^0.14.1"
+	},
+	"files": [
+		"/material-shell.js",
+		"/lib"
+	]
+}

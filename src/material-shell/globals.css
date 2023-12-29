@@ -1,0 +1,23 @@
+/**
+ * @license
+ * Copyright (c) 2023 Valentin Degenne
+ * SPDX-License-Identifier: MIT
+ */
+:root {
+	/* --md-icon-font: 'Material Symbols Rounded'; */
+
+	/* --md-list-container-color: transparent; */
+	--md-elevation-level: 1;
+
+	margin: 0;
+	font-family: roboto;
+
+	background-color: var(--md-sys-color-surface);
+	color: var(--md-sys-color-on-surface);
+
+	/* background-color: var(--md-sys-color-background);
+	color: var(--md-sys-color-on-background); */
+
+	overflow: hidden;
+	overflow-y: auto;
+}
