@@ -3,7 +3,8 @@
  * Copyright (c) 2023 Valentin Degenne
  * SPDX-License-Identifier: MIT
  */
-import {render, html} from 'lit-html';
+// import {render, html} from 'lit-html';
+import styles from './material-shell.css' with {type: 'css'};
 
 export class MaterialShell extends HTMLElement {
 	#loading = true;
@@ -28,9 +29,7 @@ export class MaterialShell extends HTMLElement {
 		this.attachShadow({mode: 'open'});
 
 		// Styles
-		const ss = new CSSStyleSheet();
-		ss.replaceSync('[hidden] { display: none !important }');
-		this.shadowRoot.adoptedStyleSheets.push(ss);
+		this.shadowRoot.adoptedStyleSheets.push(styles);
 
 		// Events
 		this.addEventListener('material-loading-on', () => (this.loading = true));
@@ -42,23 +41,25 @@ export class MaterialShell extends HTMLElement {
 	}
 
 	render() {
-		console.log('render');
-		render(
-			html`
-				<div ?hidden=${this.loading}>
-					<slot></slot>
-				</div>
-				<div
-					style="position:absolute;inset:0;display:flex;justify-content:center;align-items:center;"
-					?hidden=${!this.loading}
-				>
-					<md-circular-progress
-						?indeterminate=${this.loading}
-					></md-circular-progress>
-				</div>
-			`,
-			this.shadowRoot
-		);
+		// render(
+		// 	html`
+		// 		<div ?hidden=${this.loading}>
+		// 			<slot></slot>
+		// 		</div>
+		// 		<div
+		// 			style="position:absolute;inset:0;display:flex;justify-content:center;align-items:center;"
+		// 			?hidden=${!this.loading}
+		// 		>
+		// 			<md-circular-progress
+		// 				?indeterminate=${this.loading}
+		// 			></md-circular-progress>
+		// 		</div>
+		// 	`,
+		// 	this.shadowRoot
+		// );
+		this.shadowRoot!.innerHTML = this.loading
+			? '<div id="root"><md-circular-progress indeterminate></md-circular-progress></div>'
+			: '<slot></slot>';
 	}
 }
 

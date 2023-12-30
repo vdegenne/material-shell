@@ -3,7 +3,7 @@
 	"type": "module",
 	"description": "Shell element for material app.",
 	"version": "1.0.1",
-	"main": "./material-shell.js",
+	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
 	"module": "./lib/index.js",
 	"exports": {
@@ -38,7 +38,7 @@
 			]
 		},
 		"build:copy-css-files": {
-			"command": "cp src/lib/material-styles/*.css lib/material-styles/",
+			"command": "rsync -av --include='*.css' src/lib/ lib/",
 			"output": [
 				"lib/material-styles/*.css"
 			],
@@ -71,6 +71,7 @@
 	},
 	"homepage": "https://github.com/vdegenne/material-shell#readme",
 	"devDependencies": {
+		"@changesets/cli": "^2.27.1",
 		"@material/web": "^1.1.1",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-terser": "^0.4.4",
@@ -86,6 +87,7 @@
 		"wireit": "^0.14.1"
 	},
 	"files": [
+		"/material-styles.js",
 		"/material-shell.js",
 		"/lib"
 	]

@@ -2,44 +2,43 @@ import type {Plugin, RollupOptions} from 'rollup';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
 import {cssModules} from 'rollup-plugin-css-modules';
 import {minifyTemplateLiterals} from 'rollup-plugin-minify-template-literals';
-import {default as _terser} from '@rollup/plugin-terser';
 import CleanCSS from 'clean-css';
-import copy from 'rollup-plugin-copy';
+import {default as _terser} from '@rollup/plugin-terser';
 
-const terser = () =>
-	_terser({
+function cleanCss(): Plugin {
+	return {
+		name: 'clean-css',
+		transform(code, id) {
+			if (id.endsWith('css')) {
+				return new CleanCSS({}).minify(code).styles;
+			}
+		},
+	};
+}
+
+function terser() {
+	return _terser({
 		format: {
 			comments: false,
 		},
 	});
+}
 
 export default [
-	/** material-styles */
+	/** material-styles.js */
 	{
 		input: 'lib/material-styles/index.js',
 		output: {file: './material-styles.js', format: 'iife'},
-		plugins: [
-			copy({
-				targets: [
-					{
-						src: 'src/lib/material-styles/*.css',
-						dest: 'lib/material-styles/',
-					},
-				],
-			}),
-			cleanCss(),
-			cssModules(),
-			terser(),
-		],
+		plugins: [cleanCss(), cssModules(), terser()],
 	},
-	/** material-shell */
-
+	/** material-shell.js */
 	{
 		input: 'lib/material-shell/index.js',
 		output: {file: './material-shell.js', format: 'iife'},
 		plugins: [
 			nodeResolve(),
 			cleanCss(),
+			cssModules(),
 			minifyTemplateLiterals(),
 			{
 				name: 'rename-circular-progress-element',
@@ -67,14 +66,3 @@ export default [
 		],
 	},
 ] as RollupOptions[];
-
-function cleanCss(): Plugin {
-	return {
-		name: 'clean-css',
-		transform(code, id) {
-			if (id.endsWith('css')) {
-				return new CleanCSS({}).minify(code).styles;
-			}
-		},
-	};
-}
