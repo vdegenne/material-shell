@@ -4,6 +4,7 @@ import {materialShellLoadingOff} from '../lib/index.js';
 
 class E extends LitElement {
 	render() {
+		console.log('rendered');
 		return html`hihi`;
 	}
 
@@ -12,7 +13,7 @@ class E extends LitElement {
 			materialShellLoadingOff.call(this);
 			// OR
 			// document.querySelector('material-shell')!.loading = false;
-		}, 2000);
+		}, 5000);
 	}
 }
 window.customElements.define('e-l', E);

@@ -4,23 +4,22 @@
  * SPDX-License-Identifier: MIT
  */
 // import {render, html} from 'lit-html';
-import styles from './material-shell.css' with {type: 'css'};
+// import styles from './material-shell.css' with {type: 'css'};
 
 export class MaterialShell extends HTMLElement {
 	#loading = true;
 
 	set loading(value: boolean) {
-		if (value === true) {
-			this.setAttribute('loading', '');
-		} else {
-			this.removeAttribute('loading');
-		}
+		// if (value === true) {
+		// 	this.setAttribute('loading', '');
+		// } else {
+		// 	this.removeAttribute('loading');
+		// }
 		this.#loading = value;
 		this.render();
 	}
 
 	get loading() {
-		console.log(this.#loading);
 		return this.#loading;
 	}
 
@@ -29,11 +28,13 @@ export class MaterialShell extends HTMLElement {
 		this.attachShadow({mode: 'open'});
 
 		// Styles
-		this.shadowRoot.adoptedStyleSheets.push(styles);
+		// this.shadowRoot.adoptedStyleSheets.push(styles);
 
 		// Events
 		this.addEventListener('material-loading-on', () => (this.loading = true));
 		this.addEventListener('material-loading-off', () => (this.loading = false));
+
+		this.render();
 	}
 
 	connectedCallback() {
@@ -58,7 +59,7 @@ export class MaterialShell extends HTMLElement {
 		// 	this.shadowRoot
 		// );
 		this.shadowRoot!.innerHTML = this.loading
-			? '<div id="root"><md-circular-progress indeterminate></md-circular-progress></div>'
+			? '<div style="position:absolute;inset:0;display:flex;justify-content:center;align-items:center"><circular-progress0 indeterminate></circular-progress0></div>'
 			: '<slot></slot>';
 	}
 }
