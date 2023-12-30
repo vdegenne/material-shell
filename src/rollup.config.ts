@@ -28,13 +28,13 @@ export default [
 	/** material-styles.js */
 	{
 		input: 'lib/material-styles/index.js',
-		output: {file: './material-styles.js', format: 'iife'},
+		output: {file: './material-styles.js', format: 'esm'},
 		plugins: [cleanCss(), cssModules(), terser()],
 	},
 	/** material-shell.js */
 	{
 		input: 'lib/material-shell/index.js',
-		output: {file: './material-shell.js', format: 'iife'},
+		output: {file: './material-shell.js', format: 'esm'},
 		plugins: [
 			nodeResolve(),
 			cleanCss(),
