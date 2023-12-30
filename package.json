@@ -80,7 +80,6 @@
 		"lit": "^3.1.0",
 		"material-shell": "^1.0.1",
 		"rollup": "^4.9.1",
-		"rollup-plugin-copy": "^3.5.0",
 		"rollup-plugin-css-modules": "^0.1.2",
 		"rollup-plugin-minify-template-literals": "^1.1.4",
 		"typescript": "^5.3.3",
