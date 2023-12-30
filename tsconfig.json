@@ -9,8 +9,7 @@
 		"declaration": true,
 		"declarationMap": true,
 		"sourceMap": true,
-		"outDir": ".",
-		"checkJs": true
+		"outDir": "."
 	},
 	"include": ["src/**/*.ts", "custom-types/*.d.ts"],
 	"exclude": []
