@@ -22,12 +22,13 @@ Its utility revolves around these principles:
 npm add -D material-shell
 ```
 
-### Importing element
+### Importing styles and shell element
 
 `index.html`:
 
 ```html
 <head>
+	<script src="./node_modules/material-shell/material-styles.js"></script>
 	<script src="./node_modules/material-shell/material-shell.js"></script>
 </head>
 <body>
@@ -37,9 +38,9 @@ npm add -D material-shell
 
 Notes:
 
-- _Update `src` to wherever the script is located, it should be included during your building process_
-- _The script is minified for fast loading_
-- _You can load this script from a CDN_
+- _Update `src` to wherever the scripts are located, they should be included during your building process_
+- _The scripts are minified for fast loading_
+- _You can load these scripts from a CDN_
 
 ### Slot your app
 
