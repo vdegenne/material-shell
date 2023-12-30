@@ -1,15 +1,16 @@
 {
 	"compilerOptions": {
 		"target": "es2022",
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
 		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
 		"useDefineForClassFields": false,
 		"declaration": true,
 		"declarationMap": true,
 		"sourceMap": true,
-		"rootDir": "src",
-		"outDir": "lib"
+		"outDir": ".",
+		"checkJs": true
 	},
 	"include": ["src/**/*.ts", "custom-types/*.d.ts"],
 	"exclude": []

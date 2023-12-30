@@ -5,4 +5,3 @@
  */
 import '@material/web/progress/circular-progress.js';
 import './material-shell.js';
-import './styles.js';

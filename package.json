@@ -16,7 +16,8 @@
 	},
 	"scripts": {
 		"dev": "wds",
-		"build": "wireit"
+		"build": "wireit",
+		"build:ts": "wireit"
 	},
 	"wireit": {
 		"build": {
@@ -37,15 +38,12 @@
 			]
 		},
 		"build:copy-css-files": {
-			"command": "cp src/material-shell/*.css lib/material-shell/",
+			"command": "cp src/lib/material-styles/*.css lib/material-styles/",
+			"output": [
+				"lib/material-styles/*.css"
+			],
 			"dependencies": [
 				"build:ts"
-			],
-			"files": [
-				"src/material-shell/*.css"
-			],
-			"output": [
-				"lib/material-shell/*.css"
 			]
 		},
 		"build:rollup": {
@@ -54,8 +52,8 @@
 				"rollup.config.js"
 			],
 			"dependencies": [
-				"build:copy-css-files",
-				"build:ts"
+				"build:ts",
+				"build:copy-css-files"
 			],
 			"output": [
 				"./material-shell.js"
@@ -76,10 +74,13 @@
 		"@material/web": "^1.1.1",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-terser": "^0.4.4",
+		"@types/clean-css": "^4.2.11",
 		"@web/dev-server": "^0.4.1",
 		"@web/dev-server-esbuild": "^1.0.1",
 		"lit": "^3.1.0",
+		"material-shell": "^1.0.1",
 		"rollup": "^4.9.1",
+		"rollup-plugin-copy": "^3.5.0",
 		"rollup-plugin-css-modules": "^0.1.2",
 		"rollup-plugin-minify-template-literals": "^1.1.4",
 		"typescript": "^5.3.3",

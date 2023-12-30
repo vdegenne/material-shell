@@ -1,4 +1,6 @@
 node_modules
 /.wireit
 /lib
+/material-styles.js
 /material-shell.js
+/rollup.**

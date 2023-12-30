@@ -1,3 +1,8 @@
+/**
+ * @license
+ * Copyright (c) 2023 Valentin Degenne
+ * SPDX-License-Identifier: MIT
+ */
 import {type MaterialShell} from './material-shell/material-shell.js';
 
 const bubbles = true;
