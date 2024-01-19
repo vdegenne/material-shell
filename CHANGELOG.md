@@ -1,5 +1,11 @@
 # material-shell
 
+## 1.2.1
+
+### Patch Changes
+
+- Fix default body background color (defaults to `--md-sys-color-surface-container`)
+
 ## 1.2.0
 
 ### Minor Changes
