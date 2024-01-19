@@ -1,5 +1,11 @@
 # material-shell
 
+## 1.2.0
+
+### Minor Changes
+
+- Add vite plugin for injecting loading scripts in html head.
+
 ## 1.1.0
 
 ### Minor Changes
