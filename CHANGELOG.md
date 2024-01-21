@@ -1,5 +1,11 @@
 # material-shell
 
+## 1.2.2
+
+### Patch Changes
+
+- Give choice what to inline for vite plugin
+
 ## 1.2.1
 
 ### Patch Changes

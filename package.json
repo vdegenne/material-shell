@@ -2,7 +2,7 @@
 	"name": "material-shell",
 	"type": "module",
 	"description": "Shell element for material app.",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
 	"module": "./lib/index.js",
@@ -11,10 +11,6 @@
 			"import": "./lib/index.js",
 			"default": "./lib/index.js",
 			"types": "./lib/index.d.ts"
-		},
-		"./vite.js": {
-			"default": "./lib/vite/index.js",
-			"types": "./lib/vite/index.d.ts"
 		},
 		"./material-shell/*": "./lib/material-shell/*"
 	},
@@ -83,7 +79,7 @@
 		"@web/dev-server": "^0.4.1",
 		"@web/dev-server-esbuild": "^1.0.1",
 		"lit": "^3.1.0",
-		"material-shell": "^1.2.1",
+		"material-shell": "^1.2.2",
 		"rollup": "^4.9.5",
 		"rollup-plugin-css-modules": "^0.1.2",
 		"rollup-plugin-minify-template-literals": "^1.1.4",
