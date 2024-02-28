@@ -1,5 +1,11 @@
 # material-shell
 
+## 1.2.4
+
+### Patch Changes
+
+- Give an option to specify the default material stylesheet to use on page load
+
 ## 1.2.2
 
 ### Patch Changes
