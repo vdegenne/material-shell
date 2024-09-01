@@ -1,6 +1,11 @@
 import {type HtmlTagDescriptor, type Plugin} from 'vite';
 import {readFile} from 'node:fs/promises';
 import CleanCSS from 'clean-css';
+import {fileURLToPath} from 'url';
+import {dirname} from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 interface Options {
 	inlineStyles: boolean;
@@ -39,7 +44,7 @@ export async function materialShell(
 		tags.push({
 			tag: 'script',
 			children: (
-				await readFile('node_modules/material-shell/material-styles.js')
+				await readFile(`${__dirname}../../material-styles.js`)
 			).toString(),
 		});
 	}
@@ -47,7 +52,7 @@ export async function materialShell(
 		tags.push({
 			tag: 'script',
 			children: (
-				await readFile('node_modules/material-shell/material-shell.js')
+				await readFile(`${__dirname}/../../material-shell.js`)
 			).toString(),
 		});
 	}

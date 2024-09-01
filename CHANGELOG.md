@@ -1,5 +1,11 @@
 # material-shell
 
+## 1.2.6
+
+### Patch Changes
+
+- Fix stylesheets relative path
+
 ## 1.2.5
 
 ### Patch Changes
