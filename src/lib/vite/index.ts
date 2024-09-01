@@ -44,7 +44,7 @@ export async function materialShell(
 		tags.push({
 			tag: 'script',
 			children: (
-				await readFile(`${__dirname}../../material-styles.js`)
+				await readFile(`${__dirname}/../../material-styles.js`)
 			).toString(),
 		});
 	}
