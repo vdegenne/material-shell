@@ -24,4 +24,5 @@ declare global {
 		'material-loading-on': Event;
 		'material-loading-off': Event;
 	}
+	var shell: MaterialShell;
 }
