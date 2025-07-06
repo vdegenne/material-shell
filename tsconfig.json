@@ -1,15 +1,16 @@
 {
 	"compilerOptions": {
-		"target": "es2022",
-		"module": "ESNext",
-		"moduleResolution": "Node",
+		"target": "esnext",
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
 		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true,
 		"useDefineForClassFields": false,
 		"declaration": true,
 		"declarationMap": true,
 		"sourceMap": true,
-		"outDir": "."
+		"outDir": ".",
+		"esModuleInterop": true
 	},
 	"include": ["src/**/*.ts", "custom-types/*.d.ts"],
 	"exclude": []

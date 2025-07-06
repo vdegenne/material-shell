@@ -2,7 +2,7 @@
 	"name": "material-shell",
 	"type": "module",
 	"description": "Shell element for material app.",
-	"version": "1.3.0",
+	"version": "1.3.1",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
 	"module": "./lib/index.js",
@@ -16,7 +16,11 @@
 			"default": "./lib/vite/index.js",
 			"types": "./lib/vite/index.d.ts"
 		},
-		"./material-shell/*": "./lib/material-shell/*"
+		"./material-shell/*": "./lib/material-shell/*",
+		"./MaterialShellChild": {
+			"import": "./lib/MaterialShellChild.js",
+			"types": "./lib/MaterialShellChild.d.ts"
+		}
 	},
 	"scripts": {
 		"dev": "wds",
@@ -75,20 +79,23 @@
 	},
 	"homepage": "https://github.com/vdegenne/material-shell#readme",
 	"devDependencies": {
-		"@changesets/cli": "^2.27.1",
-		"@material/web": "^1.1.1",
-		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@changesets/cli": "^2.29.5",
+		"@material/web": "^2.3.0",
+		"@rollup/plugin-node-resolve": "^16.0.1",
 		"@rollup/plugin-terser": "^0.4.4",
 		"@types/clean-css": "^4.2.11",
-		"@web/dev-server": "^0.4.1",
-		"@web/dev-server-esbuild": "^1.0.1",
-		"lit": "^3.1.0",
-		"rollup": "^4.9.5",
+		"@web/dev-server": "^0.4.6",
+		"@web/dev-server-esbuild": "^1.0.4",
+		"lit": "^3.3.0",
+		"rollup": "^4.44.1",
 		"rollup-plugin-css-modules": "^0.1.2",
-		"rollup-plugin-minify-template-literals": "^1.1.4",
-		"typescript": "^5.3.3",
-		"vite": "^4.5.1",
-		"wireit": "^0.14.1"
+		"rollup-plugin-minify-template-literals": "^1.1.7",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.0",
+		"wireit": "^0.14.12"
+	},
+	"peerDependencies": {
+		"lit": "^3.0.0"
 	},
 	"files": [
 		"/material-styles.js",

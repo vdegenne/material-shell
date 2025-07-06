@@ -3,7 +3,10 @@ import {nodeResolve} from '@rollup/plugin-node-resolve';
 import {cssModules} from 'rollup-plugin-css-modules';
 import {minifyTemplateLiterals} from 'rollup-plugin-minify-template-literals';
 import CleanCSS from 'clean-css';
-import {default as _terser} from '@rollup/plugin-terser';
+import {createRequire} from 'node:module';
+
+const require = createRequire(import.meta.url);
+const terser = require('@rollup/plugin-terser');
 
 function cleanCss(): Plugin {
 	return {
@@ -16,13 +19,13 @@ function cleanCss(): Plugin {
 	};
 }
 
-function terser() {
-	return _terser({
-		format: {
-			comments: false,
-		},
-	});
-}
+// function terser() {
+// 	return _terser({
+// 		format: {
+// 			comments: false,
+// 		},
+// 	});
+// }
 
 export default [
 	/** material-styles.js */

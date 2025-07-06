@@ -3,8 +3,8 @@
  * Copyright (c) 2023 Valentin Degenne
  * SPDX-License-Identifier: MIT
  */
-import materialDefault from './material.css' assert {type: 'css'};
-import globalStyles from './globals.css' assert {type: 'css'};
+import materialDefault from './material.css' with {type: 'css'};
+import globalStyles from './globals.css' with {type: 'css'};
 
 let materialSheet: CSSStyleSheet;
 const savedTheme = localStorage.getItem('material-theme');
