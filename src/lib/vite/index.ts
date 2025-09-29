@@ -8,7 +8,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 interface Options {
+	/**
+	 * @default true
+	 */
 	inlineStyles: boolean;
+	/**
+	 * @default true
+	 */
 	inlineShellElement: boolean;
 	/**
 	 * A path to a css file containing material tokens
