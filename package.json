@@ -2,7 +2,7 @@
 	"name": "material-shell",
 	"type": "module",
 	"description": "Shell element for material app.",
-	"version": "1.3.6",
+	"version": "1.3.7",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
 	"module": "./lib/index.js",
@@ -103,9 +103,10 @@
 		"lit": "^3.0.0"
 	},
 	"files": [
-		"/material-styles.js",
-		"/material-shell.js",
-		"/lib"
+		"./material-styles.js",
+		"./material-shell.js",
+		"./lib",
+		"./custom-types/"
 	],
 	"dependencies": {
 		"clean-css": "^5.3.3"
