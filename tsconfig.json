@@ -12,6 +12,6 @@
 		"outDir": ".",
 		"esModuleInterop": true
 	},
-	"include": ["src/**/*.ts", "custom-types/*.d.ts"],
+	"include": ["./src/**/*.ts", "./custom-types/*.d.ts"],
 	"exclude": []
 }

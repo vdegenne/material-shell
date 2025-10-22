@@ -2,7 +2,7 @@
 	"name": "material-shell",
 	"type": "module",
 	"description": "Shell element for material app.",
-	"version": "1.3.3",
+	"version": "1.3.4",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
 	"module": "./lib/index.js",
@@ -20,6 +20,10 @@
 		"./MaterialShellChild": {
 			"import": "./lib/MaterialShellChild.js",
 			"types": "./lib/MaterialShellChild.d.ts"
+		},
+		"./applyMaterialStyles.js": {
+			"import": "./lib/material-styles/applyMaterialStyles.js",
+			"types": "./lib/material-styles/applyMaterialStyles.d.ts"
 		}
 	},
 	"scripts": {
@@ -52,7 +56,8 @@
 			],
 			"dependencies": [
 				"build:ts"
-			]
+			],
+			"files": []
 		},
 		"build:rollup": {
 			"command": "rollup -c",
