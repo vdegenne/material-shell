@@ -10,7 +10,8 @@
 		"declarationMap": true,
 		"sourceMap": true,
 		"outDir": ".",
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"types": ["@rollup/plugin-terser"]
 	},
 	"include": ["./src/**/*.ts", "./custom-types/*.d.ts"],
 	"exclude": []

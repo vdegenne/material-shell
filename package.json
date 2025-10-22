@@ -2,7 +2,7 @@
 	"name": "material-shell",
 	"type": "module",
 	"description": "Shell element for material app.",
-	"version": "1.3.5",
+	"version": "1.3.6",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
 	"module": "./lib/index.js",
@@ -29,7 +29,8 @@
 	"scripts": {
 		"dev": "wds",
 		"build": "wireit",
-		"build:ts": "wireit"
+		"build:ts": "wireit",
+		"build:rollup": "wireit"
 	},
 	"wireit": {
 		"build": {
@@ -50,7 +51,7 @@
 			]
 		},
 		"build:copy-css-files": {
-			"command": "rsync -av --include='*.css' src/lib/ lib/",
+			"command": "rsync -av --include='*/' --include='*.css' --exclude='*' src/lib/ lib/",
 			"output": [
 				"lib/material-styles/*.css"
 			],
@@ -86,13 +87,12 @@
 	"devDependencies": {
 		"@changesets/cli": "^2.29.7",
 		"@material/web": "^2.4.0",
-		"@rollup/plugin-node-resolve": "^16.0.3",
 		"@rollup/plugin-terser": "^0.4.4",
 		"@types/clean-css": "^4.2.11",
+		"@vdegenne/rollup": "file:../rollup",
 		"@web/dev-server": "^0.4.6",
 		"@web/dev-server-esbuild": "^1.0.4",
 		"lit": "^3.3.1",
-		"rollup": "^4.52.5",
 		"rollup-plugin-css-modules": "^0.1.2",
 		"rollup-plugin-minify-template-literals": "^1.1.7",
 		"typescript": "^5.9.3",
